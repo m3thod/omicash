@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @notification.name %>
+</p>
+
+<p>
+  <strong>Message text:</strong>
+  <%= @notification.message_text %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @notification.phone_number %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @notification.email %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @notification.duration %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @notification.frequency %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @notification.user_id %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @notification.is_active %>
+</p>
+
+<p>
+  <strong>Last sent:</strong>
+  <%= @notification.last_sent %>
+</p>
+
+<%= link_to 'Edit', edit_notification_path(@notification) %> |
+<%= link_to 'Back', notifications_path %>
