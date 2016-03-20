@@ -31,18 +31,13 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @notification.user_id %>
-</p>
-
-<p>
   <strong>Is active:</strong>
   <%= @notification.is_active %>
 </p>
 
 <p>
   <strong>Last sent:</strong>
-  <%= @notification.last_sent %>
+  <%= @notification.last_sent || "Not yet sent" %>
 </p>
 
 <%= link_to 'Edit', edit_notification_path(@notification) %> |

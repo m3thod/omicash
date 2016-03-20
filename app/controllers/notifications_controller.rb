@@ -1,10 +1,13 @@
 class NotificationsController < ApplicationController
   before_action :set_notification, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   # GET /notifications
   # GET /notifications.json
   def index
-    @notifications = Notification.all
+    # @notifications = Notification.all
+    user = User.find(current_user.id)
+    @notifications = user.notifications
   end
 
   # GET /notifications/1
@@ -25,6 +28,8 @@ class NotificationsController < ApplicationController
   # POST /notifications.json
   def create
     @notification = Notification.new(notification_params)
+    @notification.user_id = current_user.id
+    @notification.is_active = true
 
     respond_to do |format|
       if @notification.save
@@ -54,6 +59,7 @@ class NotificationsController < ApplicationController
   # DELETE /notifications/1
   # DELETE /notifications/1.json
   def destroy
+    # need to update this to set is_active to false ******************
     @notification.destroy
     respond_to do |format|
       format.html { redirect_to notifications_url, notice: 'Notification was successfully destroyed.' }
