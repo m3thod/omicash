@@ -4,20 +4,34 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'notifications#index'
+  # root 'notifications#index'
+  root 'pages#home'
+
+  # authenticated :user do
+  #   root :to => "notifications#index"
+  # end
 
   # these routes are for showing users a login form, logging them in, and logging them out.
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  # These routes will be for signup. The first renders a form in the browse, the second will 
+  # These routes will be for signup. The first renders a form in the browse, the second will
   # receive the form and create a user in our database using the data given to us by the user.
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
   # static pages
   get "/pages/:page" => "pages#show"
+
+
+
+
+
+
+
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

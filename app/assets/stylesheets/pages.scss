@@ -1,6 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@font-face {
+  font-family: "Glyphicons Halflings Regular";
+  src: url(/assets/glyphicons-halflings-regular.ttf) format("truetype");
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {

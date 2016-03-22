@@ -19,8 +19,8 @@
 
 # Learn more: http://github.com/javan/whenever
 
-
-every :hour do
+# every :hour do (was previous)
+every 5.minutes do
 	runner "Notification.send_notifications"
 end
 
