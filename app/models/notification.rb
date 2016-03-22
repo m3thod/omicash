@@ -5,18 +5,18 @@ class Notification < ActiveRecord::Base
 		self.find_each do |notification|
 			# check if needs to be sent
 			now = DateTime.current
-			30_ago = now - 30.minutes
+			thirty_ago = DateTime.current-30.minutes
 			created = notification.created_at.utc
 			if notification.is_active
 				# notification is active
 				if notification.last_sent
 					# notification has already been sent once
 					time_to_send = notification.last_sent + notification.frequency.hours
-					notification.send if now >= time_to_send && 30_ago <= time_to_send
+					notification.send if now >= time_to_send && thirty_ago <= time_to_send
 				else
 					# notification hasn't been sent yet
 					time_to_send = created + notification.frequency.hours
-					notification.send if now >= time_to_send && 30_ago <= time_to_send
+					notification.send if now >= time_to_send && thirty_ago <= time_to_send
 				end
 				notification.last_sent = DateTime.current
 			end
