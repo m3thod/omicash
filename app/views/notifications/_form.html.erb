@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %> of recipient<br>
     <%= f.text_field :name, :required => true %>
   </div>
   <div class="field">
@@ -29,12 +29,15 @@
   </div>
   <div class="field">
     <%= f.label :duration %><br>
-    <%= f.number_field :duration, :required => true %>
+    <!-- <%= f.number_field :duration, :required => true %> -->
+    <%= f.select :duration, [['1 Day','24'],['2 Days','48'],['3 Days','72'],['4 Days','96'],['5 Days','120'],['6 Days','144'],['7 Days','168']], :required => true %>
   </div>
   <div class="field">
     <%= f.label :frequency %><br>
-    <%= f.number_field :frequency, :required => true %>
+    <!-- <%= f.number_field :frequency, :required => true %> hours -->
+    <%= f.select :frequency, [['Every hour','1'],['Every 2 hours','2'],['Every 4 hours','4'],['Every 12 hours','12'],['Every 24 hours','24']], :required => true %>
   </div>
+  <br>
   <!-- <div class="field">
     <%= f.label :user_id %><br>
     <%= f.number_field :user_id %>
@@ -50,4 +53,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  <br>
 <% end %>
