@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'notifications#index'
-  root 'pages#home'
+  # root 'pages#home'
+  root 'sessions#new'
 
   # authenticated :user do
   #   root :to => "notifications#index"
