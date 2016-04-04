@@ -6,7 +6,7 @@ class Notification < ActiveRecord::Base
 			# check if needs to be sent
 			now = DateTime.current
 			# thirty_ago = DateTime.current-5.minutes
-			thirty_ago = DateTime.current-30.minutes
+			thirty_ago = DateTime.current-60.minutes
 			created = notification.created_at.utc
 			if notification.is_active
 				# notification is active
