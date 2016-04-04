@@ -28,9 +28,10 @@ class Notification < ActiveRecord::Base
 				# notification.push_notification_now
 
 				notification.last_sent = DateTime.current
+				notification.save!
 				# calculate if notification should be marked as inactive
 				# duration is **number of times a notif will be sent** (not days or hours)
-				if notification.created_at.utc + (notification.duration * notification.frequency.hours) > now
+				if now > notification.created_at.utc + (notification.duration).hours
 					notification.is_active = false
 					notification.save!
 				end

@@ -23,7 +23,7 @@ set :output, "log/cron.log"
 # Learn more: http://github.com/javan/whenever
 
 # every :hour do (was previous)
-every 1.minutes do
+every 30.minutes do
 	runner "Notification.send_notifications"
 end
 
