@@ -5,11 +5,27 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
-  padding:2em;
+html body {
+  background-color:#EEF0F4;
+  padding-left:2em;
+  padding-right:2em;
+  font-family: Helvetica, Arial;
 }
 
 table tr th,
 tbody tr td {
-  padding-right:2em;
+  background-color: white;
+}
+
+table tr th {
+  background-color: #F8F8F8;
+}
+
+.delete_button {
+  color:red;
+}
+
+#notifications_table {
+  border: solid thin gray;
+  border-bottom: none;
 }
