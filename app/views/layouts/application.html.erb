@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Omicash</title>
+  <title>OmiCash</title>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= stylesheet_link_tag params[:controller] %>
+	<!-- This sessions link tag is needed to have the home screen images ready on logout -->
+	<%= stylesheet_link_tag 'sessions' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
