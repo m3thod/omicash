@@ -1,9 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="col-sm-6">
-    <h1>Notifications</h1>
+  <div class="col-sm-8">
+    <div class="list-group notification_list">
+      <div class="list-group-item disabled">
+        <div class="row">
+          <div class="col-sm-3">Omi</div>
+          <div class="col-sm-7">Message</div>
+          <div class="col-sm-1">Edit</div>
+          <div class="col-sm-1">Cancel</div>
+        </div>
+      </div>
 
+      <% @notifications.each do |notification| %>
+      <div class="list-group-item notification_item">
+          <div class="row">
+            <div class="col-sm-3">
+              <b><%= link_to notification.name, notification%></b><br>
+              (Every <%= notification.frequency %> hrs)
+              <%= notification.last_sent %>
+            </div>
+            <div class="col-sm-7 text-wrap">
+              <%= notification.message_text%>
+            </div>
+            <div class="col-sm-1">
+              <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_notification_path(notification), class:"btn"%>
+            </div>
+            <div class="col-sm-1">
+              <%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, notification, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" %>
+            </div>
+          </div>
+      </div>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to 'New Notification', new_notification_path,  class: "btn btn-venmo" %>
+    </div>
+
+    <!--
     <table class="table" id="notifications_table">
       <thead>
         <tr>
@@ -12,8 +46,8 @@
 
           <th>Frequency</th>
           <th>Duration</th>
-        <!--  <th>Active</th>
-          <th>Last</th> -->
+          <th>Active</th>
+          <th>Last</th>
           <th colspan="2"></th>
         </tr>
       </thead>
@@ -29,19 +63,14 @@
 
             <td><%= notification.frequency %> hr</td>
             <td><%= notification.duration %> hrs</td>
-          <!--  <td><%= notification.is_active %></td>
-            <td><%= notification.last_sent %></td> -->
+            <td><%= notification.is_active %></td>
+            <td><%= notification.last_sent %></td>
             <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_notification_path(notification), class: "btn"%></td>
-            <td><%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, notification, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger-outline delete_button" %></td>
+            <td><%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, notification, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
-
-    <div>
-      <%= link_to 'New Notification', new_notification_path,  class: "btn btn-primary" %>
-    </div>
+  -->
   </div>
-
-  <div class="col-sm-6"></div>
 </div>

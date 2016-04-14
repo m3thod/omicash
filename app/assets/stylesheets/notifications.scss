@@ -4,28 +4,40 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+* {
+  border-radius:0 !important;
+}
 
 html body {
   background-color:#EEF0F4;
-  padding-left:2em;
-  padding-right:2em;
+  padding:2rem;
   font-family: Helvetica, Arial;
 }
 
-table tr th,
-tbody tr td {
-  background-color: white;
+a {
+  color: #3C95D2;
+  text-decoration: none;
 }
 
-table tr th {
+.btn-venmo {
+  background-color: #3C95D2;
+  color:white;
+  margin-bottom:1rem;
+}
+
+.notification_list {
+  border-color:gray;
+  border-width:1px;
+  border-style: solid;
+  border-bottom:none;
+}
+
+.notification_item {
   background-color: #F8F8F8;
-}
-
-.delete_button {
-  color:red;
-}
-
-#notifications_table {
-  border: solid thin gray;
-  border-bottom: none;
+  border-bottom-color: rgb(204, 204, 204);
+  border-bottom-width:1px;
+  border-bottom-style:solid;
+  border-left:none;
+  border-right:none;
+  border-top:none;
 }
