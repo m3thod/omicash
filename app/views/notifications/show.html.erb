@@ -1,44 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-8 col-md-offset-4" style="margin-top:3%">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @notification.name %>
-</p>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card show_notif_card">
+        <div class="card-block">
+          <h3 class="card-title">
+            <b> <%= @notification.name %> </b>
+            <%= link_to '<i class="glyphicon glyphicon-pencil"></i> edit'.html_safe, edit_notification_path(@notification), class:"btn"%>
+          </h3>
+          <p class="card-text">
+            <div class="row">
+              <div class="col-sm-5">
+                <b>Email:</b> <%= @notification.email %> <br>
+                <b>Phone:</b> <%= @notification.phone_number %> <br>
+                <b>Repeat:</b> <%= @notification.duration %> times (every <%= @notification.frequency %> hours) <br>
+                <b>Active:</b> <%= @notification.is_active %>
+              </div>
+              <div class="col-sm-7">
+                (<%= @notification.last_sent || "This message has not been sent yet" %>) <br>
+                <b>Message:</b><i> <%= @notification.message_text.truncate(110, omission: '... (cont)') %> </i>
+              </div>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Message text:</strong>
-  <%= @notification.message_text %>
-</p>
+  <%= link_to 'My Notifications'.html_safe, notifications_path, class:"btn btn-venmo" %>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @notification.phone_number %>
-</p>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @notification.email %>
-</p>
-
-<p>
-  <strong>Duration:</strong>
-  <%= @notification.duration %> messages
-</p>
-
-<p>
-  <strong>Frequency:</strong>
-  <%= @notification.frequency %> hours
-</p>
-
-<p>
-  <strong>Is active:</strong>
-  <%= @notification.is_active %>
-</p>
-
-<p>
-  <strong>Last sent:</strong>
-  <%= @notification.last_sent || "Not yet sent" %>
-</p>
-
-<%= link_to 'Edit', edit_notification_path(@notification) %> |
-<%= link_to 'Back', notifications_path %>
