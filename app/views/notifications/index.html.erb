@@ -21,7 +21,7 @@
               <%= notification.last_sent.strftime("%d/%m/%y: %H:%M:%S") %>
             </div>
             <div class="col-sm-7 text-wrap">
-              <%= notification.message_text%>
+              <%= notification.message_text.truncate(110, omission: '... (continued)')%>
             </div>
             <div class="col-sm-1">
               <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_notification_path(notification), class:"btn"%>
