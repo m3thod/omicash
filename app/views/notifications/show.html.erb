@@ -19,7 +19,7 @@
               </div>
               <div class="col-sm-7">
                 (<%= @notification.last_sent || "This message has not been sent yet" %>) <br>
-                <b>Message:</b><i> <%= @notification.message_text.truncate(110, omission: '... (cont)') %> </i>
+                <b>Message:</b><i> <%= @notification.message_text %> </i>
               </div>
             </div>
           </p>
