@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
+  # Edit current user
+  get '/myaccount' => 'users#edit'
+  post '/myaccount' => 'users#update'
+
   # static pages
   get "/pages/:page" => "pages#show"
 
