@@ -1,5 +1,6 @@
 class Notification < ActiveRecord::Base
 	belongs_to :user
+	after_create :send_initial_notif
 
 	def self.send_notifications
 		self.find_each do |notification|
@@ -37,6 +38,14 @@ class Notification < ActiveRecord::Base
 				end
 			end
 		end
+	end
+
+	# sends initial message only once (after_create)
+	# we can get rid of the check in send_notifications because notifications will always have been intially sent
+	def send_initial_notif
+		self.last_sent = DateTime.current
+		self.save!
+		self.push_notification_now
 	end
 
 	def push_notification_now
