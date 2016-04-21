@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'notifications#index'
+  root 'notifications#index'
   # root 'pages#home'
-  root 'sessions#new'
+  # root 'sessions#new'
 
   # authenticated :user do
   #   root :to => "notifications#index"
