@@ -18,7 +18,7 @@
             <div class="col-sm-3">
               <b><%= link_to notification.name, notification%></b><br>
               (every <%= notification.frequency %> hrs)<br>
-              <%= notification.last_sent.strftime("%d/%m/%y: %H:%M:%S") %>
+              <%= notification.last_sent%>
             </div>
             <div class="col-sm-7 text-wrap">
               <%= notification.message_text.truncate(110, omission: '... (continued)')%>
