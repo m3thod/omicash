@@ -5,11 +5,11 @@
 
   <div class="row" style="margin-top:3%">
     <div class="col-md-8 col-md-offset-2">
-      <h1>Details</h1><br>
+      <h2>Notification Details</h2><br>
       <div class="card show_notif_card">
         <div class="card-block">
           <h3 class="card-title">
-            <b> <%= @notification.name %> </b>
+            <b><%= @notification.name %> </b>
             <%= link_to '<i class="glyphicon glyphicon-pencil"></i> edit'.html_safe, edit_notification_path(@notification), class:"btn"%>
           </h3>
           <p class="card-text">

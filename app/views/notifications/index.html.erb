@@ -2,7 +2,7 @@
 
 <div class="row" style="margin-top:3%">
   <div class="col-sm-8 col-md-offset-2">
-    <h1>Your Notifications</h1>
+    <h2>Your Notifications</h2>
     <br>
     <div class="list-group notification_list">
       <div class="list-group-item disabled">
@@ -33,11 +33,13 @@
             </div>
           </div>
       </div>
+
       <% end %>
     </div>
     <div>
-      <%= link_to 'New Notification', new_notification_path,  class: "btn btn-venmo" %>
+      <%= link_to '<i class="glyphicon glyphicon-plus"></i> New Notification'.html_safe, new_notification_path,  class: "btn btn-venmo" %>
     </div>
+
 
     <!--
     <table class="table" id="notifications_table">
