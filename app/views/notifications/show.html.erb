@@ -1,8 +1,11 @@
+<!--
 <div class="col-md-8 col-md-offset-4" style="margin-top:3%">
   <p id="notice"><%= notice %></p>
+-->
 
-  <div class="row">
-    <div class="col-md-6">
+  <div class="row" style="margin-top:3%">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Details</h1><br>
       <div class="card show_notif_card">
         <div class="card-block">
           <h3 class="card-title">
@@ -27,8 +30,9 @@
       </div>
     </div>
   </div>
+  <br>
 
-  <%= link_to 'My Notifications'.html_safe, notifications_path, class:"btn btn-venmo" %>
+
+  <%= link_to 'My Notifications'.html_safe, notifications_path, class:"btn btn-venmo col-md-offset-2" %>
 
 </div>
-
