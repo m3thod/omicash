@@ -1,4 +1,15 @@
-<%= form_for :user, url: '/users' do |f| %>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <br>
   <div class="row">
@@ -51,7 +62,6 @@
                       <div class="col-sm-5 text-right">
                         <%= f.label :Confirm_Password %>
                       </div>
-                    <!-- <%= f.number_field :frequency, :required => true %> hours -->
                       <div class="col-sm-6">
                         <%= f.password_field :password_confirmation, :required => true %>
                       </div>
@@ -67,12 +77,7 @@
   </div>
   <br>
   <%= f.submit "Save Changes", :class => "btn btn-venmo" %>
-  <!--
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
--->
+
 
 
 <% end %>

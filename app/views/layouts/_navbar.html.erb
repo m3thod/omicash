@@ -46,7 +46,7 @@
       <ul class="nav navbar-nav navbar-right" style="margin-right:0px;padding-right:0px;">
         <!-- <li><a href="#">Notifications</a></li> -->
         <li><%= link_to '<i class="glyphicon glyphicon-home"></i> Home'.html_safe, notifications_path, {:style => 'color: white'} %></li>
-        <li><%= link_to '<i class="glyphicon glyphicon-wrench"></i> Settings'.html_safe, '/myaccount', {:style => 'color: white'} %></li>
+        <li><%= link_to '<i class="glyphicon glyphicon-wrench"></i> Settings'.html_safe, edit_user_path(current_user), {:style => 'color: white'} %></li>
         <li><%= link_to 'Logout', '/logout', {:style => 'color: white'} %></li>
         <!--
         <li class="dropdown">

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :notifications
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -25,6 +26,10 @@ Rails.application.routes.draw do
   # Edit current user
   get '/myaccount' => 'users#edit'
   post '/myaccount' => 'users#update'
+
+  # Venmo credentials
+  get '/venmo' => 'users#venmo'
+  post '/venmo' => 'users#set_venmo'
 
   # static pages
   get "/pages/:page" => "pages#show"
