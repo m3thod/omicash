@@ -52,6 +52,7 @@ class Notification < ActiveRecord::Base
 	def push_notification_now
 		# Push ActiveMailer
 		NotificationMailer.notification_email(self, self.user).deliver
+		self.message_text = self.message_text + ' - Sent with love via OmiCash'
 
 		# make Twilio calls
 		account_sid = 'ACb7ab149eb0706c444c6fe00f688c45de'
