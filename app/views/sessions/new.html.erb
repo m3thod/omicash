@@ -1,26 +1,36 @@
 
-<!-- Navigation -->
 
-<nav class="navbar navbar-default" id="landingNav">
-  <div class="container-fluid">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="navbar-header" style="margin-left:0px;padding-left:0px;">
-        <a><%= link_to '<b><i>Omicash</i></b>'.html_safe, notifications_path, {:style => 'color: #3C95D2; font-size:26px;', :class => "navbar-brand"} %></a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right" style="margin-right:0px;padding-right:0px;">
-          <li class="dropdown" id="menuLogin">
-        		<a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color:#3C95D2; font-size:16px;">
-              Sign in <i class="glyphicon glyphicon-lock" style="margin-left:1rem;"></i>
-            </a>
-        		<div class="dropdown-menu" style="padding:20px;">
-              <%= form_tag '/login' do %>
+      <nav class="navbar navbar-default" id="landingNav">
+        <div class="container-fluid">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="navbar-header" style="margin-left:0px;padding-left:0px;">
 
-              Email: <%= text_field_tag :email %>
-              Password: <%= password_field_tag :password %>
-              <%= submit_tag "Submit", class: "btn btn-venmo" %>
+              <!-- <a class="navbar-brand" href="#" style="color:white;">OmiCash</a> -->
+              <a><%= link_to '<b><i>Omicash</i></b>'.html_safe, notifications_path, {:style => 'color: #3C95D2; font-size:26px;', :class => "navbar-brand"} %></a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right" style="margin-right:0px;padding-right:0px;">
+                <li class="dropdown" id="menuLogin">
 
-              <% end %>
+              			<a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color:#3C95D2; font-size:16px;">
+                      Sign in <i class="glyphicon glyphicon-lock" style="margin-left:1rem;"></i>
+                    </a>
+              			<div class="dropdown-menu" style="padding:20px;">
+                    <!--  <form class="form" id="formLogin">
+                        <input name="username" id="username" type="text" placeholder="Username">
+                        <input name="password" id="password" type="password" placeholder="Password"><br>
+                        <button type="button" id="btnLogin" class="btn">Login</button>
+                      </form>-->
+                      <%= form_tag '/login' do %>
+
+                      Email: <%= email_field_tag :email %>
+                      Password: <%= password_field_tag :password %>
+                      <%= submit_tag "Submit", class: "btn btn-venmo" %>
+
+                      <% end %>
+                    </div>
+               </li>
+              </ul>
             </div>
           </li>
         </ul>
