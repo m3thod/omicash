@@ -20,7 +20,5 @@ class ApplicationController < ActionController::Base
 
   def venmo_authorize
     # redirect_to '/venmo' unless venmo_user
-
-    # testing
   end
 end

@@ -24,12 +24,12 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
 
   # Edit current user
-  get '/myaccount' => 'users#edit'
-  post '/myaccount' => 'users#update'
+  # get '/myaccount' => 'users#edit'
+  # post '/myaccount' => 'users#update'
 
   # Venmo credentials
-  get '/venmo' => 'users#venmo'
-  post '/venmo' => 'users#set_venmo'
+  # get '/venmo/:id' => 'users#venmo'
+  # patch '/venmo/:id' => 'users#set_venmo'
 
   # static pages
   get "/pages/:page" => "pages#show"

@@ -4,13 +4,23 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		user = User.new(user_params)
-		if user.save
-			session[:user_id] = user.id
-			redirect_to '/notifications'
-		else
-			redirect_to '/signup'
-		end
+		@user = User.new(user_params)
+		respond_to do |format|
+      if @user.save(user_params)
+      	session[:user_id] = @user.id
+        format.html { redirect_to notifications_path, notice: 'Venmo account was successfully recorded.' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        redirect_to '/signup'
+      end
+    end
+		# if user.save
+		# 	session[:user_id] = user.id
+		# 	# redirect_to '/notifications'
+		# 	format.html { redirect_to notifications_path, notice: 'Venmo account was successfully recorded.' }
+		# else
+		# 	redirect_to '/signup'
+		# end
 	end
 
 	def edit
@@ -50,7 +60,7 @@ class UsersController < ApplicationController
     end
 
 		def user_params
-			params.require(:user).permit(:name, :email, :password, :password_confirmation)
+			params.require(:user).permit(:name, :email, :password, :password_confirmation, :venmo_username, :venmo_password)
 		end
 
 		def venmo_params
