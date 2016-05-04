@@ -1,4 +1,5 @@
 class Notification < ActiveRecord::Base
+	# validates :name, :email, :message_text, :phone_number, :duration, :frequency, :user_id
 	belongs_to :user
 	after_create :send_initial_notif
 

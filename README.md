@@ -8,7 +8,7 @@
 
 * You must also have PostgreSQL installed for database functionality. See here for Mac [link](http://postgresapp.com/) and here for PC [link](http://www.postgresql.org/download/windows/)
 
-* Once these dependencies are installed, you will need create the development database on your local PostgreSQL server. Follow the directions from the source you used to download PostgreSQL to open a PG console, and enter the command **`CREATE_DATABASE omicash_development;`**
+* Once these dependencies are installed, you will need create the development database on your local PostgreSQL server. Follow the directions from the source you used to download PostgreSQL to open a PG console, and enter the command **`CREATE DATABASE omicash_development;`**
 
 ### Dependency Installation
 
